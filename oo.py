@@ -85,20 +85,22 @@ class Book(object):
 
 class Library(object):
 
-    def __init__(self, books):
+    def __init__(self):
         self.books = []
 
-    def create_and_add_book(self, title, author):
-            
+    def create_and_update_books(self, title, author):
+        
         book = Book(title, author)
-        self.books.append(book.title)
+        self.books.append([book.title, book.author])
 
     def find_books_by_author(self, author):
 
-         books_by_author = []
-         for book in self.books:
-             books_by_author.append(self.title)
-             
+        books_by_author = []
+        for book in self.books:
+            if book[1] == author:
+                books_by_author.append(book)
+        
+        return books_by_author
 
 """5. Rectangle"""
 
