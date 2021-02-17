@@ -118,3 +118,20 @@ class Rectangle:
         """Return the area of the rectangle."""
 
         return self.length * self.width
+
+class Square(Rectangle):
+    """A square."""
+
+    def __init__(self, length):
+        super().__init__(length, width)
+
+        self.length = self.width = float(length)   
+             
+    def calculate_area(self):
+        """Complete error checking before returning area of the square."""
+
+        if self.length == self.width:
+            return super().calculate_area()  
+
+        else:
+            print("Invalid Square")
