@@ -206,5 +206,19 @@ def kids_game(names):
     a dictionary (with the super-fast lookup they provide) can help;
     good solutions here will definitely require a dictionary.
     """
+    word_dict = {}
 
-    return []
+    for name in names:
+        word_dict[name] = name[0]
+    
+    list_of_words = [names[0]]
+    del word_dict[names[0]]
+  
+    for word in list_of_words:
+        for key, value in word_dict.items():
+            if word[-1] == value:
+                list_of_words.append(key)
+                del word_dict[key]
+                break
+
+    return list_of_words
