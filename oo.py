@@ -5,14 +5,14 @@
 
 Abstraction - hiding away details that aren't significant for the use of something
 Encapsulation - keeping relevant details together
-Polymorphism - inheritance that can be changed
+Polymorphism - being able to use different parts of classes; creating a modular design; 
+using parts interchangeably
 
 
 2. What is a class?
 
     A class is a smarter dictionary.  It defines a set of behaviors (methods)
     or attributes for each instance that inherits from it.
-
 
 3. What is a method?
 
@@ -47,7 +47,9 @@ class Road(object):
         self.num_lanes = 2
         self.speed_limit = 25
 
-road_1 = Road(4, 60)
+road_1 = Road(2,25)
+road_1.num_lanes = 4
+road_1.speed_limit = 60
 
 road_2 = Road(2, 25)
 
@@ -123,12 +125,12 @@ class Square(Rectangle):
     """A square."""
 
     def __init__(self, length):
-        super().__init__(length, width)
+        super().__init__(length, length)
 
         self.length = self.width = float(length)   
              
     def calculate_area(self):
-        """Complete error checking before returning area of the square."""
+        """Complete error hecking before returning area of the square."""
 
         if self.length == self.width:
             return super().calculate_area()  
